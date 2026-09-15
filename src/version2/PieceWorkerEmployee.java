@@ -37,42 +37,51 @@ public class PieceWorkerEmployee {
         this.ratePerPiece = ratePerPiece;
     }
 
+    // getter for employee id
     public int getEmpID() {
         return empID;
     }
 
+    // setter for employee id
     public void setEmpID(int empID) {
         this.empID = empID;
     }
 
+    // getter for employee name
     public String getEmpName() {
         return empName;
     }
 
+    // setter for employee name
     public void setEmpName(String empName) {
         this.empName = empName;
     }
 
+    // getter for total pieces finished
     public int getTotalPiecesFinished() {
         return totalPiecesFinished;
     }
 
+    // setter for total pieces finished
     public void setTotalPiecesFinished(int totalPiecesFinished) {
         if (totalPiecesFinished >= 0) {
             this.totalPiecesFinished = totalPiecesFinished;
         }
     }
 
+    // getter for rate per piece
     public double getRatePerPiece() {
         return ratePerPiece;
     }
 
+    // setter for rate per piece
     public void setRatePerPiece(double ratePerPiece) {
         if (ratePerPiece >= 0) {
             this.ratePerPiece = ratePerPiece;
         }
     }
 
+    // calculates salary using piece rate and bonus
     public double computeSalary() {
 
         double basePay =
@@ -87,6 +96,7 @@ public class PieceWorkerEmployee {
         return basePay + bonusPay;
     }
 
+    // displays the employee record without salary
     public void displayPieceWorkerEmployee() {
 
         System.out.printf(
@@ -99,6 +109,7 @@ public class PieceWorkerEmployee {
         );
     }
 
+    // returns the employee information including salary
     @Override
     public String toString() {
 
