@@ -1,40 +1,49 @@
 package version2;
 
-import java.time.LocalDate;
-
 public class MyDate {
 
-    private LocalDate dateHired;
-    private LocalDate birthDate;
+    private int day;
+    private int month;
+    private int year;
 
     public MyDate() {
-        dateHired = LocalDate.now();
-        birthDate = LocalDate.now();
+        day = 1;
+        month = 1;
+        year = 2000;
     }
 
-    public MyDate(LocalDate dateHired, LocalDate birthDate) {
-        this.dateHired = dateHired;
-        this.birthDate = birthDate;
+    public MyDate(int day, int month, int year) {
+        this.day = day;
+        this.month = month;
+        this.year = year;
     }
 
-    public LocalDate getDateHired() {
-        return dateHired;
+    public int getDay() {
+        return day;
     }
 
-    public void setDateHired(LocalDate dateHired) {
-        this.dateHired = dateHired;
+    public void setDay(int day) {
+        this.day = day;
     }
 
-    public LocalDate getBirthDate() {
-        return birthDate;
+    public int getMonth() {
+        return month;
     }
 
-    public void setBirthDate(LocalDate birthDate) {
-        this.birthDate = birthDate;
+    public void setMonth(int month) {
+        this.month = month;
+    }
+
+    public int getYear() {
+        return year;
+    }
+
+    public void setYear(int year) {
+        this.year = year;
     }
 
     @Override
     public String toString() {
-        return String.format("Date Hired: %s | Birth Date: %s", dateHired, birthDate);
+        return String.format("%02d/%02d/%04d", month, day, year);
     }
 }
