@@ -1,7 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package version1;
 
 public class PieceWorkerEmployee {
@@ -11,7 +7,7 @@ public class PieceWorkerEmployee {
     private int totalPiecesFinished;
     private double ratePerPiece;
 
-    // default constructor
+    // Default constructor
     public PieceWorkerEmployee() {
         empID = 0;
         empName = "N/A";
@@ -19,7 +15,7 @@ public class PieceWorkerEmployee {
         ratePerPiece = 0;
     }
 
-    // partial constructor
+    // Partial constructor
     public PieceWorkerEmployee(int empID, String empName) {
         this.empID = empID;
         this.empName = empName;
@@ -27,7 +23,7 @@ public class PieceWorkerEmployee {
         this.ratePerPiece = 0;
     }
 
-    // full constructor
+    // Full constructor
     public PieceWorkerEmployee(int empID, String empName,
                                int totalPiecesFinished,
                                double ratePerPiece) {
@@ -37,51 +33,49 @@ public class PieceWorkerEmployee {
         this.ratePerPiece = ratePerPiece;
     }
 
-    // getter for employee id
+    // Getters
     public int getEmpID() {
         return empID;
     }
 
-    // setter for employee id
-    public void setEmpID(int empID) {
-        this.empID = empID;
-    }
-
-    // getter for employee name
     public String getEmpName() {
         return empName;
     }
 
-    // setter for employee name
-    public void setEmpName(String empName) {
-        this.empName = empName;
-    }
-
-    // getter for total pieces finished
     public int getTotalPiecesFinished() {
         return totalPiecesFinished;
     }
 
-    // setter for total pieces finished
+    public double getRatePerPiece() {
+        return ratePerPiece;
+    }
+
+    // Setters
+    public void setEmpID(int empID) {
+        if (empID >= 0) {
+            this.empID = empID;
+        }
+    }
+
+    public void setEmpName(String empName) {
+        if (empName != null && !empName.trim().isEmpty()) {
+            this.empName = empName;
+        }
+    }
+
     public void setTotalPiecesFinished(int totalPiecesFinished) {
         if (totalPiecesFinished >= 0) {
             this.totalPiecesFinished = totalPiecesFinished;
         }
     }
 
-    // getter for rate per piece
-    public double getRatePerPiece() {
-        return ratePerPiece;
-    }
-
-    // setter for rate per piece
     public void setRatePerPiece(double ratePerPiece) {
         if (ratePerPiece >= 0) {
             this.ratePerPiece = ratePerPiece;
         }
     }
 
-    // calculates salary using piece rate and bonus
+    // Computes salary
     public double computeSalary() {
 
         double basePay =
@@ -96,12 +90,12 @@ public class PieceWorkerEmployee {
         return basePay + bonusPay;
     }
 
-    // displays the employee record without salary
+    // Displays employee information
     public void displayPieceWorkerEmployee() {
 
         System.out.printf(
                 "ID: %d | Name: %s | Pieces Finished: %d "
-                + "| Rate/Piece: P%.2f%n",
+                        + "| Rate/Piece: ₱%.2f%n",
                 empID,
                 empName,
                 totalPiecesFinished,
@@ -109,13 +103,13 @@ public class PieceWorkerEmployee {
         );
     }
 
-    // returns the employee information including salary
+    // Returns employee information
     @Override
     public String toString() {
 
         return String.format(
                 "PieceWorkerEmployee [ID: %d, Name: %s, "
-                + "Pieces: %d, Rate: P%.2f, Total Salary: P%.2f]",
+                        + "Pieces: %d, Rate: ₱%.2f, Total Salary: ₱%.2f]",
                 empID,
                 empName,
                 totalPiecesFinished,

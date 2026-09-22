@@ -1,7 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package version1;
 
 public class CommissionEmployee {
@@ -10,21 +6,21 @@ public class CommissionEmployee {
     private String empName;
     private double totalSale;
 
-    // default constructor
+    // Default constructor
     public CommissionEmployee() {
         empID = 0;
         empName = "N/A";
         totalSale = 0;
     }
 
-    // partial constructor
+    // Partial constructor
     public CommissionEmployee(int empID, String empName) {
         this.empID = empID;
         this.empName = empName;
         this.totalSale = 0;
     }
 
-    // full constructor
+    // Full constructor
     public CommissionEmployee(int empID, String empName,
                               double totalSale) {
         this.empID = empID;
@@ -32,81 +28,74 @@ public class CommissionEmployee {
         this.totalSale = totalSale;
     }
 
-    // getter for employee id
+    // Getters
     public int getEmpID() {
         return empID;
     }
 
-    // setter for employee id
-    public void setEmpID(int empID) {
-        this.empID = empID;
-    }
-
-    // getter for employee name
     public String getEmpName() {
         return empName;
     }
 
-    // setter for employee name
-    public void setEmpName(String empName) {
-        this.empName = empName;
-    }
-
-    // getter for total sale
     public double getTotalSale() {
         return totalSale;
     }
 
-    // setter for total sale
+    // Setters
+    public void setEmpID(int empID) {
+        if (empID >= 0) {
+            this.empID = empID;
+        }
+    }
+
+    public void setEmpName(String empName) {
+        if (empName != null && !empName.trim().isEmpty()) {
+            this.empName = empName;
+        }
+    }
+
     public void setTotalSale(double totalSale) {
         if (totalSale >= 0) {
             this.totalSale = totalSale;
         }
     }
 
-    // calculates commission based on the sales bracket
+    // Computes commission salary
     public double computeSalary() {
 
         double commissionRate;
 
         if (totalSale < 50000) {
-
             commissionRate = 0.05;
-
         } else if (totalSale < 100000) {
-
             commissionRate = 0.10;
-
         } else if (totalSale < 500000) {
-
             commissionRate = 0.15;
-
         } else {
-
             commissionRate = 0.20;
         }
 
         return totalSale * commissionRate;
     }
 
-    // displays the employee record without commission salary
+    // Displays employee information
     public void displayCommissionEmployee() {
 
         System.out.printf(
-                "ID: %d | Name: %s | Total Sale: P%.2f%n",
+                "ID: %d | Name: %s | Total Sale: ₱%.2f%n",
                 empID,
                 empName,
                 totalSale
         );
     }
 
-    // returns the employee information including commission salary
+    // Returns employee information
     @Override
     public String toString() {
 
         return String.format(
                 "CommissionEmployee [ID: %d, Name: %s, "
-                + "Total Sale: P%.2f, Commission Salary: P%.2f]",
+                        + "Total Sale: ₱%.2f, Commission Salary: ₱%.2f]",
                 empID,
                 empName,
                 totalSale,
